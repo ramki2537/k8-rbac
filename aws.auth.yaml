@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::340752835677:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-pz0pnFFbnNsj
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - default-trainee
+      userarn: arn:aws:iam::340752835677:user/love
+      username: love    
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2025-04-14T11:00:51Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: 38d5459d-28ad-495d-b6d7-c59d1c4336ce
